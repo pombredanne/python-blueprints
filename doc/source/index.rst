@@ -386,9 +386,3 @@ If you still struggle with the API here is it with more comments:
    generator over the index content.
 
 *hops* are a metric used to compute the complexity of a query.
-
-
-.. toctree::
-   :maxdepth: 5
-
-   api/blueprints
