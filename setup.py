@@ -9,7 +9,7 @@ setup(
     license='BSD',
     author='Amirouche Boubekki',
     author_email='amirouche.boubekki@gmail.com',
-    description='Java jars of Blueprints bundled as a Python package',
+    description="Python bindings of Tinkerpop's Blueprints",
     packages=('blueprints', 'blueprints.javalib'),
     include_package_data=True,
     package_data={
