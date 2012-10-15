@@ -26,7 +26,11 @@ class IndexAPI(object):
         return Index(self._db.createIndex(name, klass, *parameters), self._db)
 
     def get(self, name, klass):
-        return Index(self._db.getIndex(name, klass), self._db)
+        index = self._db.getIndex(name, klass)
+        if index:
+            return Index(index, self._db)
+        else:
+            return None
 
     def all(self):
         iterator = self._db.getIndices().iterator()
@@ -38,6 +42,9 @@ class IndexAPI(object):
 
 
 class Graph(object):
+
+    VERTEX = Vertex.VERTEX
+    EDGE = Edge.EDGE
 
     def __init__(self, name, path):
         klass = autoclass(name_to_class[name])

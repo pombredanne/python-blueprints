@@ -8,6 +8,8 @@ Direction = autoclass('com.tinkerpop.blueprints.Direction')
 
 class Edge(Element):
 
+    EDGE = autoclass('com.tinkerpop.blueprints.Edge')
+
     def delete(self):
         self._db.removeEdge(self._element)
 

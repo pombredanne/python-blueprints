@@ -18,7 +18,8 @@ class Index(object):
         iterator = self._index.get(key, value).iterator()
         while iterator.hasNext():
             element = iterator.next()
-            if isinstance(element, Vertex):
+            class_name = element.getClass().getName()
+            if 'Vertex' in class_name:
                 yield Vertex(element, self._db)
             else:
                 yield Edge(element, self._db)

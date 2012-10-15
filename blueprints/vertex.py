@@ -8,6 +8,8 @@ Direction = autoclass('com.tinkerpop.blueprints.Direction')
 
 class Vertex(Element):
 
+    VERTEX = autoclass('com.tinkerpop.blueprints.Vertex')
+
     def delete(self):
         self._db.removeVertex(self._element)
 

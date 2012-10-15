@@ -276,17 +276,13 @@ GraphDBs have index, to create an index of vertex use the following code:
 
 .. code-block:: python
 
-  from blueprints import VERTEX
-
-  pages = graph.index.create('pages', VERTEX)
+  pages = graph.index.create('pages', graph.VERTEX)
 
 To create an index of edges do this:
 
 .. code-block:: python
 
-  from blueprints import EDGE
-
-  revisions = graph.index.create('revisions', EDGE)
+  revisions = graph.index.create('revisions', graph.EDGE)
 
 Then you can put vertex in an index using ``put(key, value, element)``:
 
@@ -377,7 +373,7 @@ If you still struggle with the API here is it with more comments:
 
 - Similarly you don't import the ``Index`` class, but create one using
   ``Graph.index.create(name, ELEMENT)`` where ``ELEMENT`` should be one
-  of ``blueprints.EDGE`` or ``blueprints.VERTEX`` or retrieve the index
+  of ``Graph.EDGE`` or ``Graph.VERTEX`` or retrieve the index
   by its name using ``Graph.index.get(name)``.
 
  - ``Index.put(key, value, element`` put ``element`` in the ``key``, 
