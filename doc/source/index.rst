@@ -6,6 +6,24 @@
 Welcome to python-blueprints's documentation!
 =============================================
 
+Installation
+============
+
+There is no binary package for now so you may have some difficulties installing 
+python-blueprints on Windows and MacOS machines, but it's possible.
+
+Follow the next ninja-cli dance::
+
+  $> mkvirtualenv --system-site-packages coolprojectname
+  $> pip install cython git+git://github.com/kivy/pyjnius.git blueprints
+
+You will most likely need both OrientDB and Neo4j libraries if you plan to 
+support them, python packages are provided for each of them::
+
+  $> pip install neo4j_jars orientdb_jars
+
+You are ready for some graph database awesomeness in Python.
+
 Getting started with core API
 =============================
 
@@ -22,12 +40,6 @@ backend you want to use, currently only `Neo4j <http://neo4j.org/>`_ and
 `OrienDB <http://www.orientdb.org/index.htm>`_ are supported.
 
 For the purpose of the tutorial, we will use ``/tmp/`` as directory storage.
-
-Each database require different python packages that bundles the jars needed
-to run the backends, I recommend you download both so that you download both 
-so that you can later benchmark both database with you application code::
-
-  pip install orientdb_jars neo4j_jars
 
 Using Neo4j:
 
