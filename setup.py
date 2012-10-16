@@ -4,7 +4,7 @@ from setuptools import setup
 
 setup(
     name='Blueprints',
-    version='1.0.1',
+    version='1.0.2',
     url='https://github.com/tinkerpop/blueprints',
     license='BSD',
     author='Amirouche Boubekki',
