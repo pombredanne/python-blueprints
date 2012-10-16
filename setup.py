@@ -5,7 +5,7 @@ from setuptools import setup
 setup(
     name='Blueprints',
     version='1.0.2',
-    url='https://github.com/tinkerpop/blueprints',
+    url='https://github.com/Printemps/python-blueprints',
     license='BSD',
     author='Amirouche Boubekki',
     author_email='amirouche.boubekki@gmail.com',
