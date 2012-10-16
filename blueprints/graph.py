@@ -68,7 +68,7 @@ class Graph(object):
         while iterator.hasNext():
             yield Vertex(iterator.next(), self._db)
 
-    def edge(self, start, end, label):
+    def edge(self, start, label, end):
         edge = self._db.addEdge(
             ZERO,
             start._element,

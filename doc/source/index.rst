@@ -113,13 +113,13 @@ Now we will create a page, a page will be vertex too:
        frontpage['title'] = 'Welcome to Printemps Wiki'
 
 The page needs to be linked to ``wiki`` as a *part of*, for that matter
-there is a method ``Graph.edge(start, end, label)`` than can be used
+there is a method ``Graph.edge(start, label, end)`` than can be used
 like this:
 
 .. code-block:: python
 
    with graph.transaction():
-       partof = graph.edge(wiki, frontpage, 'part of')
+       partof = graph.edge(wiki, 'part of', frontpage)
 
 An edge has three important methods, that do actually nothing but return the 
 value we are interested in, but since those are not editable, you access them
@@ -234,7 +234,7 @@ enough to be understood by any Python programmer:
             revision = graph.vertex()
             revision['body'] = body
             # link the edge and annotate it
-            link = graph.edge(page, revision, 'revised as')
+            link = graph.edge(page, 'revised as', revision)
             link['revision'] = new_revision
 
 ``create_revision`` does the following:
@@ -351,7 +351,7 @@ If you still struggle with the API here is it with more comments:
    that starts a transaction, elements are automatically saved and you **must**
    always do mutating operations in transaction.
  - ``Graph.vertex()`` create a vertex in a transaction.
- - ``Graph.edge(start, end, label)`` create an edge in a transaction starting at
+ - ``Graph.edge(start, label, end)`` create an edge in a transaction starting at
    ``start`` vertex, ending at ``end`` vertex with ``label`` as label. The 
    tutorial doesn't say much about labels, so I add here that it's a way to know
    which edge is which when they are several edges starting and ending at the 
@@ -375,7 +375,7 @@ If you still struggle with the API here is it with more comments:
  - ``Vertex.incomings()`` is a generator over the edges that are ending in the 
    current vertex, each edge retrieved implied a *hop*.
 - ``Edge`` similarly are not imported, they are created with 
-  ``Graph.edge(start, end, label)`` retrieved with ``Graph.get_vertice(id)``
+  ``Graph.edge(start, label, end)`` retrieved with ``Graph.get_vertice(id)``
   and via iteration of ``Vertex.outgoings()`` and ``Vertex.incomings()`` 
   generators.
 
