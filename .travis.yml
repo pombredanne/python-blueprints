@@ -2,7 +2,8 @@ language: python
 python:
   - "2.7"
 install:
-  - pip install neo4j-jars orientdb-jars cython git+git://github.com/kivy/pyjnius.git
+  - pip install cython
+  - pip install neo4j-jars orientdb-jars git+git://github.com/kivy/pyjnius.git
 script:
   - echo "Running scripts..."
   - nosetests
