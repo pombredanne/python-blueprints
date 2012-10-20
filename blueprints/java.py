@@ -13,11 +13,14 @@ def add_to_class_path(javalib):
     except ImportError:
         pass
     else:
-        os.environ['CLASSPATH'] = '%s%s%s/*' % (
-            os.environ['CLASSPATH'],
-            divider,
-            class_path
-        )
+        if 'CLASSPATH' not in os.environ:
+            os.environ['CLASSPATH'] = class_path + '/*'
+        else:
+            os.environ['CLASSPATH'] = '%s%s%s/*' % (
+                os.environ['CLASSPATH'],
+                divider,
+                class_path
+            )
 
 
 for javalib in ['neo4j_jars', 'orientdb_jars']:
