@@ -1,6 +1,9 @@
 python-blueprints
 =================
 
+.. image:: https://travis-ci.org/Printemps/python-blueprints.png
+
+
 Blueprints bindings in Python
 
 You can run tests with::
