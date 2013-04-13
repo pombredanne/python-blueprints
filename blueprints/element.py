@@ -9,7 +9,9 @@ class Element(object):
         self._db = db
 
     def id(self):
-        return self._element.getId().toString()
+        if hasattr(self._element.getId(), 'toString'):
+            return self._element.getId().toString()
+        return str(self._element.getId())
 
     def __getitem__(self, key):
         return from_java(self._element.getProperty(key))

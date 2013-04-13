@@ -6,6 +6,11 @@ Python bindings in of `Blueprints <https://github.com/tinkerpop/blueprints/wiki>
 
 - `forge <https://github.com/python-graph-lovestory/python-neo4j-jars`_
 
+Install
+=======
+
+::
+
 
 Versionning
 ===========

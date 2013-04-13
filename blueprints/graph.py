@@ -60,7 +60,7 @@ class Graph(object):
             self._db.stopTransaction(conclusion.FAILURE)
     transaction = contextmanager(transaction)
 
-    def vertex(self):
+    def create_vertex(self):
         return Vertex(self._db.addVertex(ZERO), self._db)
 
     def vertices(self):
@@ -68,7 +68,7 @@ class Graph(object):
         while iterator.hasNext():
             yield Vertex(iterator.next(), self._db)
 
-    def edge(self, start, label, end):
+    def create_edge(self, start, label, end):
         edge = self._db.addEdge(
             ZERO,
             start._element,
@@ -85,8 +85,8 @@ class Graph(object):
     def close(self):
         self._db.shutdown()
 
-    def get_edge(self, id):
+    def edge(self, id):
         return Edge(self._db.getEdge(id), self._db)
 
-    def get_vertex(self, id):
+    def vertex(self, id):
         return Vertex(self._db.getVertex(id), self._db)

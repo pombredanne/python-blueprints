@@ -22,10 +22,12 @@ def add_to_class_path(javalib):
                 class_path
             )
 
-
-for javalib in ['neo4j_jars', 'orientdb_jars']:
-    add_to_class_path(javalib)
 class_path = resource_filename(__name__, 'javalib')
+
+
+if not 'CLASSPATH' in os.environ:
+    os.environ['CLASSPATH'] = ''
+
 
 os.environ['CLASSPATH'] = '%s%s%s/*' % (
     os.environ['CLASSPATH'],
