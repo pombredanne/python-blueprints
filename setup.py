@@ -4,8 +4,8 @@ from setuptools import setup
 
 setup(
     name='Blueprints',
-    version='2.3.0.0',
-    url='https://github.com/Printemps/python-blueprints',
+    version='2.3.0.1',
+    url='https://github.com/python-graph-lovestory/python-blueprints',
     license='BSD',
     author='Amirouche Boubekki',
     author_email='amirouche.boubekki@gmail.com',
