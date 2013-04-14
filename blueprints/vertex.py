@@ -24,3 +24,10 @@ class Vertex(Element):
         iterator = self._element.getEdges(Direction.IN, *labels).iterator()
         while iterator.hasNext():
             yield Edge(iterator.next(), self._db)
+
+    def data(self):
+        data = dict(id=self.id())
+        for key in self.keys():
+            data[key] = self[key]
+        return data
+        

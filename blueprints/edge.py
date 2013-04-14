@@ -21,3 +21,11 @@ class Edge(Element):
 
     def end(self):
         return Vertex(self._element.getVertex(Direction.IN), self._db)
+
+    def data(self):
+        data = dict(id=self.id())
+        for key in self.keys():
+            data[key] = self[key]
+        data['start'] = self.start.id()
+        data['end'] = self.end.id()
+        return data
