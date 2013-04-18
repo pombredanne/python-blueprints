@@ -4,12 +4,13 @@ python-blueprints
 
 Python bindings in of `Blueprints <https://github.com/tinkerpop/blueprints/wiki>`_
 
-- `forge <https://github.com/python-graph-lovestory/python-neo4j-jars`_
+- `forge <https://github.com/python-graph-lovestory/python-neo4j-jars>`_
 
 Install
 =======
 
 ::
+
    pip install cython git+git://github.com/kivy/pyjnius.git blueprints
 
 Versionning
