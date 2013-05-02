@@ -11,7 +11,9 @@ Install
 
 ::
 
-   pip install cython git+git://github.com/kivy/pyjnius.git blueprints
+   pip install cython
+   pip install git+git://github.com/kivy/pyjnius.git
+   pip install blueprints
 
 Versionning
 ===========
@@ -30,4 +32,3 @@ Documentation
 =============
 
 The documentation is available at `rtd <https://python-graph-lovestory.readthedocs.org/en/latest/blueprints.html>`_.
-
