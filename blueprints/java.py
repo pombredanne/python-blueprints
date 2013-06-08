@@ -62,8 +62,10 @@ def to_java(value):
         for k, v in value.iteritems():
             map.put(k, to_java(v))
         return map
+    elif value == None:
+        return ''
     else:
-        raise TypeError('type not supported')
+        raise TypeError('type not supported %s', type(value))
 
 
 def from_java(value):
