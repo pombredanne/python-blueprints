@@ -51,6 +51,7 @@ class Graph(object):
         self._db = klass(path)
         self.index = IndexAPI(self._db)
 
+    @contextmanager
     def transaction(self):
         conclusion = autoclass('com.tinkerpop.blueprints.TransactionalGraph$Conclusion')
         try:
@@ -58,7 +59,6 @@ class Graph(object):
             self._db.stopTransaction(conclusion.SUCCESS)
         finally:
             self._db.stopTransaction(conclusion.FAILURE)
-    transaction = contextmanager(transaction)
 
     def create_vertex(self):
         return Vertex(self._db.addVertex(ZERO), self._db)
